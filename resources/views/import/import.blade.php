@@ -20,6 +20,17 @@
       <section class="content">
         <div class="container-fluid">
           <div class="row">
+            <table class="table table-bordered table-hover dataTable dtr-inline">
+                <thead>
+                    <tr>
+                        @foreach ($columns as $column)
+                            <th class="sorting">
+                                {{ $column }}
+                            </th>
+                        @endforeach                        
+                    </tr>
+                </thead>
+            </table>
         </div>
       </section>
       <!-- /.content -->
