@@ -22,27 +22,34 @@
                 <div class="card-header">
                   <h3 class="card-title">Import</h3>
                 </div>
-                <form class='ml-2' action="/" method="POST">
-                    @csrf
-                    <div class="form-group">
-                        <label>Date from:</label>      
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                          <input type="text" name="date_from" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" data-mask>
+                <form class='ml-2' action="" method="POST">
+                  @csrf
+                  
+                <div class="form-group">
+                  <label>Date from:</label>
+                    <div class="input-group date" id="dateFrom" data-target-input="nearest">
+                        <input type="text" name="dateFrom" class="form-control datetimepicker-input" data-target="#dateFrom"/>
+                        <div class="input-group-append" data-target="#dateFrom" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label>Date to:</label>      
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                          <input type="text" name="date_to" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" data-mask>
-                        </div>
-                      </div>  
-                    <div class="form-group">
-                      <label>Key:</label>
-                      <input type="password" class="form-control" placeholder="Key">
                     </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Date to:</label>
+                    <div class="input-group date" id="dateTo" data-target-input="nearest">
+                        <input type="text" name="dateTo" class="form-control datetimepicker-input" data-target="#dateTo"/>
+                        <div class="input-group-append" data-target="#dateTo" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                  <div class="form-group">
+                    <label>Key:</label>
+                    <input type="password" name="key_password" class="form-control" placeholder="Key">
                   </div>
+              </div>
   
                   <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Import</button>

@@ -17,5 +17,6 @@ Auth::routes();
 Route::group(["namespace" => "App\Http\Controllers\Import", 'prefix' => 'import'], function () {
     Route::get('/', "IndexController")->name('import.main');
     Route::get('/{table_name}','ImportController')->name('import.import');
+    Route::post('/{table_name}', 'DownloadController');
 });
 
