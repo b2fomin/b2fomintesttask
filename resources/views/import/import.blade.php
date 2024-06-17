@@ -16,6 +16,42 @@
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Import</h3>
+                </div>
+                <form class='ml-2' action="/" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label>Date from:</label>      
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                          <input type="text" name="date_from" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" data-mask>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Date to:</label>      
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                          <input type="text" name="date_to" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" data-mask>
+                        </div>
+                      </div>  
+                    <div class="form-group">
+                      <label>Key:</label>
+                      <input type="password" class="form-control" placeholder="Key">
+                    </div>
+                  </div>
+  
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Import</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
             <table class="table table-bordered table-hover dataTable">
                 <thead>
                     <tr>

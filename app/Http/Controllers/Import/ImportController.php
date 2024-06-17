@@ -17,6 +17,6 @@ class ImportController extends Controller
         }, $db_columns);
     
     // dd($fields_list);
-        return view("import.import", ['table' => DB::table($table_name), 'columns' => $fields_list, 'name' => $table_name]);
+        return view("import.import", ['table' => DB::table($table_name)->get(), 'columns' => $fields_list, 'name' => $table_name]);
     }
 }
