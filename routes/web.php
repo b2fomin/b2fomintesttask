@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-Route::group(["namespace" => "App\Http\Controllers\Import"], function () {
-    Route::get('/', "IndexController")->name('home');
+Route::group(["namespace" => "App\Http\Controllers\Import", 'prefix' => 'import'], function () {
+    Route::get('/', "IndexController")->name('import.main');
+    Route::get('/{table_name}','ImportController')->name('import.import');
 });
 

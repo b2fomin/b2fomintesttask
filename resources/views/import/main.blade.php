@@ -33,7 +33,7 @@
                   <div class="icon">
                     <i class="fa fa-solid fa-database"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="{{route('import.import', ['table_name' => $table[0]])}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             @endforeach
