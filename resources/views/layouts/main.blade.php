@@ -48,7 +48,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Sidebar -->
-    @include('includes.sidebar')
+    @include('includes.sidebar', ['active' => $active])
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
