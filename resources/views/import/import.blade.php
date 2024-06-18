@@ -34,16 +34,17 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                  <label>Date to:</label>
-                    <div class="input-group date" id="dateTo" data-target-input="nearest">
-                        <input type="text" name="dateTo" class="form-control datetimepicker-input" data-target="#dateTo"/>
-                        <div class="input-group-append" data-target="#dateTo" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                </div>
+                @if($name != "stocks")
+                  <div class="form-group">
+                    <label>Date to:</label>
+                      <div class="input-group date" id="dateTo" data-target-input="nearest">
+                          <input type="text" name="dateTo" class="form-control datetimepicker-input" data-target="#dateTo"/>
+                          <div class="input-group-append" data-target="#dateTo" data-toggle="datetimepicker">
+                              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                          </div>
+                      </div>
+                  </div>
+                @endif
 
                   <div class="form-group">
                     <label>Key:</label>

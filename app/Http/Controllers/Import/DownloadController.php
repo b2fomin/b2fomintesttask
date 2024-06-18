@@ -14,12 +14,14 @@ class DownloadController extends Controller
         $request = $request->validated();
 
         $request['dateFrom'] = str_replace('/', '-', $request['dateFrom']);
+        if(isset($request['dateTo'])) {
         $request['dateTo'] = str_replace('/', '-', $request['dateTo']);
+        }
 
         $request['key'] = $request['key_password'];
         unset($request['key_password']);
 
-        $response = Http::get("http://89.108.115.241:6969/api/" . 'orders', $request);
+        $response = Http::get("http://89.108.115.241:6969/api/" . 'incomes', $request);
         dd($response->json('data'));
         return view('import.import');
     }
