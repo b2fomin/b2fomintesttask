@@ -19,8 +19,8 @@ class DownloadController extends Controller
         $request['key'] = $request['key_password'];
         unset($request['key_password']);
 
-        $response = Http::get("http://89.108.115.241:6969/api/" . 'sales', $request);
-        dd($response);
+        $response = Http::get("http://89.108.115.241:6969/api/" . 'orders', $request);
+        dd($response->json('data'));
         return view('import.import');
     }
 }
