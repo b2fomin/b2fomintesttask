@@ -49,9 +49,11 @@ class DownloadController extends Controller
         try {
             DB::beginTransaction();
             $table = DB::table($table_name);
-
-            $table->insert($data);
-
+            foreach($data as $row)
+            {
+                if (!$table->where($row)->exists())
+                    $table->insert($row);
+            }
 
             DB::commit();
 
