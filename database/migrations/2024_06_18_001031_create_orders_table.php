@@ -32,7 +32,7 @@ class CreateOrdersTable extends Migration
             $table->string('category');
             $table->string('brand');
             $table->boolean('is_cancel');
-            $table->string('cancel_dt')->nullable();
+            $table->dateTime('cancel_dt')->nullable();
         });
     }
 

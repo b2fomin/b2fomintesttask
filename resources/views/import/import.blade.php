@@ -81,6 +81,9 @@
                         </tr>
                     @endforeach
                 </tbody>
+                <tfoot>
+                  {{$table->links('pagination::bootstrap-4')}}
+                </tfoot>
             </table>
         </div>
       </section>
