@@ -11,5 +11,6 @@ DB_USERNAME=qwerty
 DB_PASSWORD=pravila2002
 
 Начальная страница: import
+сайт: b2fomintesttask.ru/import
 
 Не смог сделать stocks, т.к постоянно получал пустой запрос

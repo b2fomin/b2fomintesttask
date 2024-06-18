@@ -25,7 +25,7 @@ class DownloadController extends Controller
         $request['page'] = 1;
         while(true) {
             $response = Http::get("http://89.108.115.241:6969/api/" . $table_name, $request);
-            if ($response->ok() && is_null($response->json()['links']['next']) && !is_null($response->json()['links']['prev']))
+            if (!$response->ok() || (is_null($response->json()['links']['next']) && !is_null($response->json()['links']['prev'])))
             {
                 break;
             }
@@ -34,8 +34,8 @@ class DownloadController extends Controller
                 $this->put_data_in_db($response['data'], $table_name);
             }
         
-        }  
-        
+        }
+
         $db_columns = DB::select('SHOW COLUMNS FROM '. $table_name);
         $fields_list = array_map(function($db_column) {
             return $db_column->Field;
@@ -49,10 +49,8 @@ class DownloadController extends Controller
         try {
             DB::beginTransaction();
             $table = DB::table($table_name);
-            foreach($data as $row)
-            {
-                if (!$table->where($row)->exists())
-                    $table->insert($row);
+            foreach($data as $row) {
+                $table->updateOrInsert($row);
             }
 
             DB::commit();
